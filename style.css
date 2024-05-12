@@ -1,0 +1,143 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box; /* isse content ka size chota ho jayega na ki margin bada hoga */
+ }
+ 
+ #wrapper{
+      height: 100vh ;
+      /* overflow-y: auto; */
+      overflow-x:  hidden;
+      perspective: 10px;
+      /* jaha text and image render hoga aur meri akankhu ke bich ka distace ko prespective  */
+     /* z axis aur meri akankhu ke bich ka distace-prespective */
+ }
+  
+ .container{
+     position: relative;
+     height: 100%;
+     display: flex ;
+     /* flex ki by default  man axis horizontal hoga */
+     justify-content: center;
+     align-items: center;
+     transform-style: preserve-3d;
+     z-index: -1;
+     /* layering wala thing x-index ko use karsakte hai  */
+     
+ }
+ .background,.foreground{
+     position: absolute;
+ /*  jab bhi position overlap karani hoti hai to absolute use hoga */
+ 
+     height: 100%;
+     width: 100%;
+     /* object fit se isse lagta hai ki apke viewport par image achi lagti hai  */
+     object-fit: cover;
+ 
+     /* object fit :cover */
+       /* object thodi dikhne me achi lagti hai - aspect ratio mantain rahta hai */
+     z-index: -1;
+ }
+ .background{
+     transform: translateZ(-40px) scale(5);
+     object-fit: cover;
+ }
+ .foreground{ 
+     height: 800px;
+     transform: translateZ(-10px) scale(2);
+     /* opacity:0.79999999999999; us to slightly blur the photo */
+ }
+ h1{
+     position:absolute;
+     top: 4rem;
+     left: 50%;
+     transform:translateX(-50%) ;
+     font-size: 7rem;
+     letter-spacing: 4px;
+     color:whitesmoke;
+     text-shadow: 0 0 10px;/*      dekhan hai*/
+ /*          text-shadow: 0|horizontal distance    0|vetical distamce    10px|shadow blur  */
+ 
+ }
+  
+ section{
+     background-color: rgb(45 45 45 ) ;
+     color: white;/* text part ka color*/
+     padding:5rem 0;
+      
+ }
+ 
+ .secheading{
+     font-size: 5rem;
+     padding: 0 10rem;
+ }
+ 
+ .text{
+     font-size: 1.5rem;
+     padding: 0 10rem; 
+     margin: 5rem 0;
+ }  
+ /* colour figure itraction */  
+ .bg1{
+     background-image: url(arthur-shelby-paul-anderson.jpg );
+ }
+ .bg2{
+     background-image: url(thomas.avif);
+ }
+ .bg3{
+     background-image: url(aunt\ poly.jpg);
+ }
+ .bg4{
+background-image: url(joe-cole-peaky-blinders-696x442.jpg);
+ }
+ .bg{
+   position: relative;
+   width: 100%;
+   height: 500px; 
+   background-attachment: fixed;/*- background par hi fix ho gta hai */   
+     background-size: cover;/* bahut hi gajab chig hai-- sari photo repeat nahi hua viewport ka size chota kar ne se isse sab kuch thik ho jata hai   object fit cover jaisa hi hai*/
+ background-position: center;
+ }
+  
+ 
+ .desc{
+     position: absolute;
+     top: 50%;/* position absolute hai to usska jo bhi top left ya kuch bhi ho vo uske uppar vale div se relate kar ke hi hoga*/
+     left: 50%;
+     border: 1px solid black;
+     background-color: whitesmoke;
+     color: black;
+     text-align: center;
+     padding: 0.5rem 2.5rem;
+     transform: translateX(-100px) translateY(-10px);
+     font-size: 1.5rem;
+      font-weight: 600;
+ }
+ 
+ /* 
+ adverture sabse tej isliye move kar raha hai kyuki vo container me hai jiska z-index =0 , admi ka z-index=-10 hai isliye vo text se dirre move kar raha hai , background ka z-index = -40 hai isliye vo aur dihre chal raha hai */
+ 
+ /* padding : 1 rem --all side */
+ /* padding : 1 rem 2rem --top and bottom       left and right */
+ /* padding : 1 rem 2rem 3rem --top      left and right     bottom       */
+ /* padding : 1 rem 2rem 3rem  2rem--top    right     bottom    left    */
+ 
+ 
+ /* background image
+ letter spacing
+ font size
+ background-attachment: fixed;
+ background-position: center;
+     position: absolute;-- overlapping karne ke liye
+ 
+ */
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
